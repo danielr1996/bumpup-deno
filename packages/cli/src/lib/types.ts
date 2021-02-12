@@ -12,7 +12,7 @@ export type BumpupOptions = {
     file?: string,
 }
 
-export type BumpupFunction = (options: BumpupOptions) => (data: BumpupData) => BumpupData;
+export type BumpupFunction = (options: BumpupOptions) => (data: BumpupData) => BumpupData | Promise<BumpupData>;
 
 export type BumpupPlugin = BumpupFunction | [BumpupFunction, BumpupOptions]
 

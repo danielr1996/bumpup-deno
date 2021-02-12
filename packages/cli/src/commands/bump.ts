@@ -8,7 +8,7 @@ export const bump = async(options: BumpupOptions) => {
     if (config.version !== '2.0.0') {
         throw new Error('Config versions other than 2.0.0 are not yet supported')
     }
-    composePlugins(config.plugins,options);
+    await composePlugins(config.plugins,options);
 }
 
 export const loadConfig = async (options: BumpupOptions): Promise<BumpupConfig> =>{
