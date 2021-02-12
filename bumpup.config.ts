@@ -1,5 +1,5 @@
 import {BumpupConfig} from "./packages/cli/src/lib/types.ts";
-import version from "./packages/version-deps-ts/main.ts";
+import version from "./packages/version-txt/main.ts";
 const config: BumpupConfig = {
     version: "2.0.0",
     plugins: [
