@@ -1,4 +1,4 @@
-import {BumpupData, BumpupFunction, BumpupOptions, BumpupPlugin} from "./types.ts";
+import {BumpupData, BumpupOptions, BumpupPlugin} from "./types.ts";
 
 /**
  * Applies options from cli and config to a plugin function and executes the plugins in order, returning the end results

@@ -7,6 +7,9 @@ export type BumpupData = {
 export type BumpupOptions = {
     dry?: boolean,
     pre?: boolean,
+    preid?: string,
+    log?: 'error' | 'warn' | 'info' | 'verbose' | 'debug' | 'silly',
+    file?: string,
 }
 
 export type BumpupFunction = (options: BumpupOptions) => (data: BumpupData) => BumpupData;
