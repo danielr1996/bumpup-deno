@@ -1,9 +1,13 @@
 import {BumpupConfig} from "./packages/cli/src/lib/types.ts";
-import version from "./packages/version-txt/main.ts";
+// @ts-ignore
+// import version from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/version-txt/type.ts";
+import type from "./packages/type-git/type.ts";
+
 const config: BumpupConfig = {
     version: "2.0.0",
     plugins: [
-        version,
+        // version,
+        type,
         // () => (data) => ({...data, version: '1.0.0'}),
         // () => (data) => ({...data, newVersion: '2.0.0'}),
         // (options) => (data) => {
