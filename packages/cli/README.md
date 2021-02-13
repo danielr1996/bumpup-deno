@@ -95,13 +95,14 @@ export default {
 To add a plugin import it and add it to the plugin array:
 
 ```ts
-import type from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/type-git-conventional-changelog/type.ts";
-import read from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/read-txt/read.ts";
-import determine from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/determine-semver/determine.ts";
-import write from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/write-txt/write.ts";
-import record from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/type-git-conventional-changelog/record.ts";
+import read from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/read-txt/src/read.ts";
+import type from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/type-git-conventional-changelog/src/type.ts";
+import determine from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/determine-semver/src/determine.ts";
+import write from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/write-txt/src/write.ts";
+import record from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/type-git-conventional-changelog/src/record.ts";
+import {BumpupConfig} from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/cli/src/lib/types.ts";
 
-export default {
+const config: BumpupConfig =  {
     version: "2.0.0",
     plugins: [
         read,
@@ -111,6 +112,7 @@ export default {
         record,
     ]
 }
+export default config;
 ```
 
 #### Providing options to plugins
@@ -124,7 +126,7 @@ import determine from "https://raw.githubusercontent.com/danielr1996/bumpup-deno
 import write from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/write-txt/write.ts";
 import record from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/type-git-conventional-changelog/record.ts";
 
-export default {
+const config: BumpupConfig =  {
     version: "2.0.0",
     plugins: [
         read,
@@ -134,6 +136,7 @@ export default {
         record,
     ]
 }
+export default config;
 ```
 
 #### Inline Plugins
@@ -143,7 +146,6 @@ This might be usefull if you want to debug the workflow or slightly alter a plug
 A simple inline plugin that just logs the options and data looks like this:
 
 ```ts
-
 export default {
     version: "2.0.0",
     plugins: [
