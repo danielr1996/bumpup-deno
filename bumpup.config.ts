@@ -13,10 +13,10 @@ const config: BumpupConfig = {
     version: "2.0.0",
     plugins: [
         read,
-        [type, {tagPrefix: 'main'}],
+        type,
         determine,
         write,
-        [record, {tagPrefix: 'main'}],
+        record,
     ]
 };
 export default config;
