@@ -1,6 +1,6 @@
-import {BumpupPlugin} from "../../cli/src/lib/types.ts";
+import {BumpupFunction, BumpupPlugin} from "../../cli/src/lib/types.ts";
 
-const record: BumpupPlugin = options=>async data=>{
+const record: BumpupFunction = options=>async data=>{
     // @ts-ignore
     if(options.dry){
         console.log(`not bumping because --dry was specified`)
@@ -8,8 +8,7 @@ const record: BumpupPlugin = options=>async data=>{
         console.log(options);
         // @ts-ignore
         const process = Deno.run({
-            // @ts-ignore
-            cmd: [`git`, `tag`, `-a`, `${options.tagPrefix}${options.tagPrefix !== '' ? '-' : ''}${data.newVersion}`, `-m`,`${options.tagPrefix}${options.tagPrefix !== '' ? '-' : ''}${data.newVersion}`],
+            cmd: [`git`, `tag`, `-a`, `${options.tagPrefix}${options.tagPrefix? '-' : ''}${data.newVersion}`, `-m`,`${options.tagPrefix}${options.tagPrefix? '-' : ''}${data.newVersion}`],
             stdout: "piped",
             stderr: "piped",
         })

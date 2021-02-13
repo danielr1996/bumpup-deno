@@ -1,12 +1,11 @@
-import {BumpupPlugin} from "../../cli/src/lib/types.ts";
+import {BumpupFunction, BumpupPlugin} from "../../cli/src/lib/types.ts";
 
 const COMMIT_SEPERATOR = `++COMMIT_SEPERATOR++`
 
-const type: BumpupPlugin = options => async data => {
+const type: BumpupFunction = options => async data => {
     // @ts-ignore
     const process = Deno.run({
-        // @ts-ignore
-        cmd: [`git`, `log`, `${options.tagPrefix}${options.tagPrefix !== '' ? '-' : ''}${data.version}..`, `--pretty=format:%B${COMMIT_SEPERATOR}`, `.`],
+        cmd: [`git`, `log`, `${options.tagPrefix}${options.tagPrefix? '-' : ''}${data.version}..`, `--pretty=format:%B${COMMIT_SEPERATOR}`, `.`],
         stdout: "piped",
         stderr: "piped",
     })

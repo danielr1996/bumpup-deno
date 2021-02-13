@@ -1,7 +1,7 @@
 import {semver} from '../deps.ts'
-import {BumpupPlugin} from "../../cli/src/lib/types.ts";
+import {BumpupFunction, BumpupPlugin} from "../../cli/src/lib/types.ts";
 
-export const determine: BumpupPlugin = options => data => {
+export const determine: BumpupFunction = options => data => {
     if(!('version' in data)){
         throw new Error(`version doesn't exist`)
     }if(!('type' in data)){

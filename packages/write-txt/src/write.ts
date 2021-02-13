@@ -1,6 +1,6 @@
-import {BumpupPlugin} from "../../cli/src/lib/types.ts";
+import {BumpupFunction, BumpupPlugin} from "../../cli/src/lib/types.ts";
 
-export const write: BumpupPlugin = options => async data => {
+export const write: BumpupFunction = options => async data => {
     // @ts-ignore
     await Deno.writeTextFile("version.txt", data.newVersion);
     return data;
