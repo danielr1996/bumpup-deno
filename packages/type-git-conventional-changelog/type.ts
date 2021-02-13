@@ -12,31 +12,10 @@ const type: BumpupPlugin = options => async data => {
     const raw = new TextDecoder().decode(await process.output());
     const parsed = parseCommandLineOutput(raw);
     const messages = parseCommitMessages(parsed);
-    console.log(messages);
-    return {...data, type: 'major'};
+    const commitTypes = getCommitTypes(messages)
+    const type = determineHighestCommitType(commitTypes);
+    return {...data, type};
 }
-
-// const type = options => data => {
-
-//Ensure git repo exists
-// if (!fs.existsSync('.git')) {
-//     logger.error(`${symbols.error} .git directory doesn't exist`);
-//     return data;
-// }
-
-//Check if tags exists
-// const tagsRaw = child_process.execSync('git tag').toString();
-// if(tagsRaw === ''){
-//     logger.info(`${symbols.info} no tags found`)
-//     return {...data, type: 'new'};
-// }
-//
-// //If tags exists, find type
-// const rawCommits = child_process.execSync(GIT_COMMAND(data.version)).toString();
-// const type = determineHighestCommitType(getCommitTypes(parseCommitMessages(parseCommandLineOutput(rawCommits))))
-// logger.info(`${symbols.info} change type is ${type}`)
-// return {...data, type};
-// }
 
 export const parseCommandLineOutput = (output: string): string[] => output.trim().split(COMMIT_SEPERATOR).slice(0, -1);
 

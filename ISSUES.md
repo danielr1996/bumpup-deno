@@ -6,3 +6,5 @@ Features that are present in bumpup-node but not yet in bumpup-deno
 
 ## logging not yet implemented
 logging is done with console.log, should be replaced with a complete logging solution like winston in node
+
+## Some sanity checks for git are missing
