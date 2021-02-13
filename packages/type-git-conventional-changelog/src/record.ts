@@ -8,7 +8,7 @@ const record: BumpupFunction = options=>async data=>{
         console.log(options);
         // @ts-ignore
         const process = Deno.run({
-            cmd: [`git`, `tag`, `-a`, `${options.tagPrefix}${options.tagPrefix? '-' : ''}${data.newVersion}`, `-m`,`${options.tagPrefix}${options.tagPrefix? '-' : ''}${data.newVersion}`],
+            cmd: [`git`, `tag`, `-a`, `${options.tagPrefix?options.tagPrefix : ''}${options.tagPrefix? '-' : ''}${data.newVersion}`, `-m`,`${options.tagPrefix?options.tagPrefix : ''}${options.tagPrefix? '-' : ''}${data.newVersion}`],
             stdout: "piped",
             stderr: "piped",
         })
