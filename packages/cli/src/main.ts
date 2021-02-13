@@ -1,6 +1,6 @@
 import {Command, VERSION} from "../deps.ts";
-import {BumpupOptions} from "./lib/types.ts";
 import {bump} from "./commands/bump.ts";
+import {init} from "./commands/init.ts";
 
 export const enumType = (enumOptions: string[]) => ({value}: any) => {
     // @ts-ignore
@@ -25,8 +25,8 @@ await new Command()
     .command('init')
     .description('initializes a default config file')
     .option('-f, --file <type:string>', `which config file to write`, {default: 'bumpup.config.js'})
-    .action((options: BumpupOptions)=>{
-        console.log(options);
-    })
+    .option('-d, --dry [type:boolean]', `executes all plugins in dry mode, preventing potentially destructive operations`)
+    .description('initializes a default config file')
+    .action(init)
     // @ts-ignore
     .parse(Deno.args);
