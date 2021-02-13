@@ -1,10 +1,11 @@
 import {BumpupFunction, BumpupPlugin} from "../../cli/src/lib/types.ts";
 import {createTag} from "./helpers.ts";
+import * as log from "https://deno.land/std@0.84.0/log/mod.ts";
 
 const COMMIT_SEPERATOR = `++COMMIT_SEPERATOR++`
 
 const type: BumpupFunction = options => async data => {
-
+    //TODO: Error handling for Deno.run
     // @ts-ignore
     const process = Deno.run({
         cmd: [`git`, `log`, `${createTag(options.tagPrefix, data.version)}..`, `--pretty=format:%B${COMMIT_SEPERATOR}`, `.`],
@@ -14,7 +15,9 @@ const type: BumpupFunction = options => async data => {
     const raw = new TextDecoder().decode(await process.output());
     const parsed = parseCommandLineOutput(raw);
     const messages = parseCommitMessages(parsed);
+    log.debug(`messages: ${messages}`);
     const commitTypes = getCommitTypes(messages)
+    log.debug(`commitTypes: ${commitTypes}`);
     const type = determineHighestCommitType(commitTypes);
     return {...data, type};
 }
