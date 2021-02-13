@@ -5,8 +5,10 @@ const record: BumpupPlugin = options=>async data=>{
     if(options.dry){
         console.log(`not bumping because --dry was specified`)
     }else{
+        console.log(options);
         // @ts-ignore
         const process = Deno.run({
+            // @ts-ignore
             cmd: [`git`, `tag`, `-a`, `${options.tagPrefix}${data.newVersion}`, `-m`,`${options.tagPrefix}${data.newVersion}`],
             stdout: "piped",
             stderr: "piped",
