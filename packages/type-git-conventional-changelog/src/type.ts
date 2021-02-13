@@ -3,9 +3,10 @@ import {BumpupFunction, BumpupPlugin} from "../../cli/src/lib/types.ts";
 const COMMIT_SEPERATOR = `++COMMIT_SEPERATOR++`
 
 const type: BumpupFunction = options => async data => {
+    const tag = `${options.tagPrefix? `${options.tagPreifx}-`:``}${data.newVersion}`;
     // @ts-ignore
     const process = Deno.run({
-        cmd: [`git`, `log`, `${options.tagPrefix?options.tagPrefix : ''}${options.tagPrefix? '-' : ''}${data.version}..`, `--pretty=format:%B${COMMIT_SEPERATOR}`, `.`],
+        cmd: [`git`, `log`, `${tag}..`, `--pretty=format:%B${COMMIT_SEPERATOR}`, `.`],
         stdout: "piped",
         stderr: "piped",
     })
