@@ -10,6 +10,7 @@ export type BumpupOptions = {
     preid?: string,
     log?: 'error' | 'warn' | 'info' | 'verbose' | 'debug' | 'silly',
     file?: string,
+    [key: string]: any
 }
 
 export type BumpupFunction = (options: BumpupOptions) => (data: BumpupData) => BumpupData | Promise<BumpupData>;

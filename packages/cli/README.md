@@ -10,7 +10,7 @@
 
 ```shell script
 // Install bumpup to your $DENO_DIR
-deno install --allwo-read --allow-write -n bumpup https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/cli/src/main.ts
+deno install --allow-read --allow-write -n bumpup https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/cli/src/main.ts
 // Create an example config file
 bumpup init
 bumpup
