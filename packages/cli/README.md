@@ -40,7 +40,7 @@ $ bumpup --help
                            operations
     -p, --pre      [type]  - do a prerelease
     -i, --preid    <type>  - specify an optional prelrease id to be used                           (Depends: --pre)
-    -l, --log      <type>  - specifies the log level (error, warn, info, verbose, debug, silly)    (Default: "info")
+    -l, --log.ts      <type>  - specifies the log.ts level (error, warn, info, verbose, debug, silly)    (Default: "info")
     -f, --file     <type>  - which config file to read                                             (Default: "bumpup.config.ts")
 
   Commands:
