@@ -95,11 +95,11 @@ export default {
 To add a plugin import it and add it to the plugin array:
 
 ```ts
-import type from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/type-git-conventional-changelog/type.ts";
-import read from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/read-txt/read.ts";
-import determine from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/determine-semver/determine.ts";
-import write from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/write-txt/write.ts";
-import record from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/type-git-conventional-changelog/record.ts";
+import type from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/type-git-conventional-changelog/type.ts";
+import read from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/read-txt/read.ts";
+import determine from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/determine-semver/determine.ts";
+import write from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/write-txt/write.ts";
+import record from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/type-git-conventional-changelog/record.ts";
 
 export default {
     version: "2.0.0",
@@ -118,11 +118,11 @@ To pass options to a plugin add an array with the plugin and its options instead
 For a list of options supported by the plugin see the plugins doc. 
 
 ```ts
-import type from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/type-git-conventional-changelog/type.ts";
-import read from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/read-txt/read.ts";
-import determine from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/determine-semver/determine.ts";
-import write from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/write-txt/write.ts";
-import record from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/type-git-conventional-changelog/record.ts";
+import type from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/type-git-conventional-changelog/type.ts";
+import read from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/read-txt/read.ts";
+import determine from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/determine-semver/determine.ts";
+import write from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/write-txt/write.ts";
+import record from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/type-git-conventional-changelog/record.ts";
 
 export default {
     version: "2.0.0",

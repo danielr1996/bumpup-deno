@@ -1,4 +1,4 @@
-import {BumpupPlugin} from "../cli/src/lib/types.ts";
+import {BumpupPlugin} from "../../cli/src/lib/types.ts";
 
 const COMMIT_SEPERATOR = `++COMMIT_SEPERATOR++`
 

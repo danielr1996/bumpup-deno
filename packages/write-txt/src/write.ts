@@ -1,4 +1,4 @@
-import {BumpupPlugin} from "../cli/src/lib/types.ts";
+import {BumpupPlugin} from "../../cli/src/lib/types.ts";
 
 export const write: BumpupPlugin = options => async data => {
     // @ts-ignore
