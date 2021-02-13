@@ -15,7 +15,7 @@ const type: BumpupFunction = options => async data => {
     const raw = new TextDecoder().decode(await process.output());
     const parsed = parseCommandLineOutput(raw);
     const messages = parseCommitMessages(parsed);
-    log.debug(`messages: ${messages}`);
+    log.debug(`messages: ${JSON.stringify(messages)}`);
     const commitTypes = getCommitTypes(messages)
     log.debug(`commitTypes: ${commitTypes}`);
     const type = determineHighestCommitType(commitTypes);

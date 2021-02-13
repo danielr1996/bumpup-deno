@@ -12,7 +12,7 @@ export const determine: BumpupFunction = options => data => {
     }
     let returnData;
     if (data.type === 'none') {
-        log.debug('type was none, thereversion newVersion = version')
+        log.debug('type was none, therefore newVersion = version')
         returnData = {...data, newVersion: data.version};
     } else {
         const releaseIdentifier = options.pre ? `pre${data.type}` : data.type;
