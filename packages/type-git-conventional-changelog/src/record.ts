@@ -9,7 +9,7 @@ const record: BumpupPlugin = options=>async data=>{
         // @ts-ignore
         const process = Deno.run({
             // @ts-ignore
-            cmd: [`git`, `tag`, `-a`, `${options.tagPrefix}${data.newVersion}`, `-m`,`${options.tagPrefix}${data.newVersion}`],
+            cmd: [`git`, `tag`, `-a`, `${options.tagPrefix}${options.tagPrefix !== '' ? '-' : ''}${data.newVersion}`, `-m`,`${options.tagPrefix}${options.tagPrefix !== '' ? '-' : ''}${data.newVersion}`],
             stdout: "piped",
             stderr: "piped",
         })

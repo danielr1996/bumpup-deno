@@ -5,7 +5,8 @@ const COMMIT_SEPERATOR = `++COMMIT_SEPERATOR++`
 const type: BumpupPlugin = options => async data => {
     // @ts-ignore
     const process = Deno.run({
-        cmd: [`git`, `log`, `${data.version}..`, `--pretty=format:%B${COMMIT_SEPERATOR}`, `.`],
+        // @ts-ignore
+        cmd: [`git`, `log`, `${options.tagPrefix}${options.tagPrefix !== '' ? '-' : ''}${data.version}..`, `--pretty=format:%B${COMMIT_SEPERATOR}`, `.`],
         stdout: "piped",
         stderr: "piped",
     })
