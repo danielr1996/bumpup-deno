@@ -10,6 +10,7 @@ const record: BumpupFunction = options=>async data=>{
         const tag = createTag(options.tagPrefix, data.newVersion)
         log.debug(`tag: ${tag}`)
         //TODO: Error handling for Deno.run
+
         // @ts-ignore
         const process = Deno.run({
             cmd: [`git`, `tag`, `-a`, `${tag}`, `-m`,`${tag}`],
