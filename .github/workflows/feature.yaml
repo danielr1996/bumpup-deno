@@ -25,8 +25,7 @@ jobs:
         with:
           deno-version: ${{matrix.deno}}
       - run: |
-          deno --version
-          deno bundle src/main.ts dist/main.js
+          mkdir dist && deno bundle src/main.ts dist/main.js
           cat version.txt
           git log --oneline 0.0.1.. .
 
