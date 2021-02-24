@@ -27,7 +27,8 @@ jobs:
       - run: |
           deno --version
           deno bundle src/main.ts main.js
-          deno run main.js --help
+          deno run --allow-run --allow-read --allow-write https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/cli/src/main.ts
+          cat version.txt
 #      - name: Install Node ${{matrix.node-version}}
 #        uses: actions/setup-node@v1
 #        with:
