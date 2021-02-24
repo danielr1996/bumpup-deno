@@ -1,10 +1,11 @@
 FROM hayd/deno:debian-1.7.2
 
-RUN chmod -R 777 $DENO_DIR
+WORKDIR /bumpup
 
 COPY deps.ts .
 RUN deno cache deps.ts
 
 ADD . .
 RUN deno install --root /usr/local -n bumpup --allow-read --allow-write --allow-run src/main.ts
+RUN chmod -R a+rwx $DENO_DIR
 ENTRYPOINT ["bumpup"]
