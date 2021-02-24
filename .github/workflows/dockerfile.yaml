@@ -18,3 +18,4 @@ jobs:
           registry: docker.pkg.github.com
           repository: ${{ github.repository_owner }}/${{ github.event.repository.name }}/${{ github.event.repository.name }}
           tag_with_ref: true
+          path: packages/cli
