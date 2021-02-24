@@ -1,7 +1,6 @@
-import {Command, VERSION} from "../deps.ts";
+import {Command, VERSION, log} from "../deps.ts";
 import {bump} from "./commands/bump.ts";
 import {init} from "./commands/init.ts";
-import * as log from "https://deno.land/std@0.84.0/log/mod.ts";
 
 export const enumType = (enumOptions: string[]) => ({value}: any) => {
     // @ts-ignore
