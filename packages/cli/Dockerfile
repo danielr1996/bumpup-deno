@@ -1,4 +1,4 @@
-FROM hayd/alpine-deno:1.7.2
+FROM hayd/debian-deno:1.7.2
 
 COPY deps.ts .
 RUN deno cache deps.ts
