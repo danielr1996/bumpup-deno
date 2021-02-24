@@ -1,6 +1,6 @@
 FROM hayd/deno:debian-1.7.2
 
-RUN chmod 777 $DENO_DIR
+RUN chmod -R 777 $DENO_DIR
 
 COPY deps.ts .
 RUN deno cache deps.ts
