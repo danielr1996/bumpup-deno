@@ -10,6 +10,9 @@ jobs:
   build:
     name: Build
     runs-on: 'ubuntu-latest'
+    defaults:
+      run:
+        working-directory: packages/cli
     strategy:
       fail-fast: false
       matrix:
@@ -23,9 +26,8 @@ jobs:
           deno-version: ${{matrix.deno}}
       - run: |
           deno --version
-          deno run https://deno.land/std/examples/welcome.ts
-          deno install --allow-read -n deno_cat https://deno.land/std/examples/cat.ts
-          deno_cat ./README.md
+          deno bundle src/main.ts main.js
+          deno run main.js --help
 #      - name: Install Node ${{matrix.node-version}}
 #        uses: actions/setup-node@v1
 #        with:
