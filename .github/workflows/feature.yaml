@@ -27,8 +27,8 @@ jobs:
       - run: |
           mkdir dist && deno bundle src/main.ts dist/main.js
           deno cache --reload bumpup.config.ts
-          deno cache --reload https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/cli/src/main.ts
-          deno run --allow-run --allow-read --allow-write https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/cli/src/main.ts
+          deno cache --reload https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/cli/src/main.ts
+          deno run --allow-run --allow-read --allow-write https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/cli/src/main.ts
 
 #      - name: Install Node ${{matrix.node-version}}
 #        uses: actions/setup-node@v1
