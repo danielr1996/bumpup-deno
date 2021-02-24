@@ -19,6 +19,7 @@ const type: BumpupFunction = options => async data => {
     const commitTypes = getCommitTypes(messages)
     log.debug(`commitTypes: ${commitTypes}`);
     const type = determineHighestCommitType(commitTypes);
+    log.info(`type is ${type}`)
     return {...data, type};
 }
 
