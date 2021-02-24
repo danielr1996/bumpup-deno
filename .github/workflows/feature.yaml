@@ -29,6 +29,7 @@ jobs:
           deno cache --reload bumpup.config.ts
           deno cache --reload https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/cli/src/main.ts
           deno run --allow-run --allow-read --allow-write https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/cli/src/main.ts
+          cat version.txt
           git tag
 
 #      - name: Install Node ${{matrix.node-version}}
