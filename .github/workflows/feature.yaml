@@ -26,6 +26,7 @@ jobs:
           deno-version: ${{matrix.deno}}
       - run: |
           mkdir dist && deno bundle src/main.ts dist/main.js
+          deno run --allow-run --allow-read --allow-write https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/cli/src/main.ts
           cat version.txt
           git log --oneline 0.0.1.. .
 
