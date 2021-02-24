@@ -5,7 +5,7 @@ export const write: BumpupFunction = options => async data => {
     //TODO: Error handling for file not found
     // @ts-ignore
     await Deno.writeTextFile("version.txt", data.newVersion);
-    log.info(`${(data.newVersion !== data.version  && data.newVersion !== null) || data.type==='new' ? `` : `not `}bumping version in package.json`)
+    log.info(`${(data.newVersion !== data.version  && data.newVersion !== null) || data.type==='new' ? `` : `not `}writing version to version.txt`)
 
     return data;
 }
