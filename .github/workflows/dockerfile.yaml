@@ -20,3 +20,4 @@ jobs:
           tag_with_sha: true
           add_git_labels: true
           path: packages/cli
+          tags: latest
