@@ -17,7 +17,7 @@ const record: BumpupFunction = options=>async data=>{
             stderr: "piped",
         })
         const raw = new TextDecoder().decode(await process.output());
-        log.info(`recording version to git`)
+        log.info(`recording ${tag} to git`)
     }
 
     return data;
