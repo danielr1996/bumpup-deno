@@ -3,7 +3,7 @@ FROM hayd/debian-deno:1.7.2
 WORKDIR /app
 
 RUN echo $'#!/bin/sh\n\
-deno "run" "--allow-read" "--allow-write" "--allow-run" "src/main.ts" "$@"\n'\
+deno "run" "--allow-read" "--allow-write" "--allow-run" "/app/src/main.ts" "$@"\n'\
 > /usr/local/bin/bumpup
 RUN chmod a+x /usr/local/bin/bumpup
 
