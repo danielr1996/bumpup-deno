@@ -48,12 +48,12 @@ jobs:
           release_name: ${{ env.VERSION }}
           draft: false
           prerelease: true
-#      - id: upload-release-asset
-#        uses: actions/upload-release-asset@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          upload_url: ${{ steps.create_release.outputs.upload_url }}
-#          asset_path: ./${{matrix.dir}}/dist/main.js
-#          asset_name: main.js
-#          asset_content_type: application/javascript
+      - id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./${{matrix.dir}}/dist/main.js
+          asset_name: main.js
+          asset_content_type: application/javascript
