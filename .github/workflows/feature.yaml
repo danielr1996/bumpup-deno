@@ -25,7 +25,8 @@ jobs:
       - uses: denolib/setup-deno@v2
         with:
           deno-version: ${{matrix.deno}}
-        - run : deno --version
+      - run: |
+          deno --version
 #      - run: |
 #          mkdir dist && deno bundle src/main.ts dist/main.js
 #          deno run --allow-run --allow-read --allow-write https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/cli/src/main.ts
