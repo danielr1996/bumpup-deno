@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        deno: [ '1.7.5', '1.7.4', '1.7.2', '1.7.1', '1.7.0' ]
+        deno: [ '1.7.5', '1.7.0' ]
         dir: ['packages/cli', 'packages/debug']
     steps:
       - uses: actions/checkout@v2
@@ -27,6 +27,7 @@ jobs:
           deno-version: ${{matrix.deno}}
       - run: |
           deno --version
+          pwd
 #      - run: |
 #          mkdir dist && deno bundle src/main.ts dist/main.js
 #          deno run --allow-run --allow-read --allow-write https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/cli/src/main.ts
