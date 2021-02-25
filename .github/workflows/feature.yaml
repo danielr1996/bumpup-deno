@@ -12,12 +12,12 @@ jobs:
     runs-on: 'ubuntu-latest'
     defaults:
       run:
-        working-directory: ${{matrix.dir}}
+        working-directory: packages/${{matrix.dir}}
     strategy:
       max-parallel: 1
       matrix:
         deno: [ '1.7.5']
-        dir: ['packages/cli', 'packages/debug']
+        dir: ['cli', 'debug']
     steps:
       - uses: actions/checkout@v2
         with:
@@ -34,6 +34,7 @@ jobs:
           deno run --allow-run --allow-read --allow-write https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/cli/src/main.ts
           echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
           echo ${{ env.VERSION }}
+#          push commit as last action
       - uses: stefanzweifel/git-auto-commit-action@v4
       - uses: ad-m/github-push-action@master
         with:
@@ -44,16 +45,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.VERSION }}
-          release_name: ${{ env.VERSION }}
+          tag_name: ${{matrix.dir}}-${{ env.VERSION }}
+          release_name: ${{matrix.dir}}-${{ env.VERSION }}
           draft: false
           prerelease: true
-      - id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./${{matrix.dir}}/dist/main.js
-          asset_name: main.js
-          asset_content_type: application/javascript
+#      - id: upload-release-asset
+#        uses: actions/upload-release-asset@v1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          upload_url: ${{ steps.create_release.outputs.upload_url }}
+#          asset_path: ./packages/${{matrix.dir}}/dist/main.js
+#          asset_name: main.js
+#          asset_content_type: application/javascript
