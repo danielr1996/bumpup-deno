@@ -17,7 +17,7 @@ jobs:
       max-parallel: 1
       matrix:
         deno: [ '1.7.5']
-        dir: ['cli', 'debug']
+        dir: ['cli', 'debug', 'determine-incremental','read-txt','write-txt']
     steps:
       - uses: actions/checkout@v2
         with:
@@ -35,11 +35,6 @@ jobs:
           deno run --allow-run --allow-read --allow-write https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/cli/mod.ts
           echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
           echo ${{ env.VERSION }}
-#      - uses: stefanzweifel/git-auto-commit-action@v4
-#      - uses: ad-m/github-push-action@master
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-#          branch: ${{ github.ref }}
       - id: create_release
         uses: actions/create-release@v1
         env:

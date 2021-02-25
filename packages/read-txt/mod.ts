@@ -1,1 +1,1 @@
-export {read} from './src/read.ts';
+export {default} from './src/read.ts';

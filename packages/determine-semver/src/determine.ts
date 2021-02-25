@@ -2,7 +2,7 @@ import {semver} from '../deps.ts'
 import {BumpupFunction, BumpupPlugin} from "../../cli/src/lib/types.ts";
 import * as log from "https://deno.land/std@0.84.0/log/mod.ts";
 
-export const determine: BumpupFunction = options => data => {
+const determine: BumpupFunction = options => data => {
     if(!('version' in data)){
         log.error(`version doesn't exist in data`)
         return data;
