@@ -1,4 +1,4 @@
-import {Command, VERSION, log} from "../deps.ts";
+import {Command, log} from "../deps.ts";
 import {bump} from "./commands/bump.ts";
 import {init} from "./commands/init.ts";
 
@@ -10,7 +10,7 @@ export const enumType = (enumOptions: string[]) => ({value}: any) => {
     return value;
 }
 
-export const configureLogging = (fn: any) => async (options: any) =>{
+export const configureLogging = (fn: any) => async (options: any) => {
     await log.setup({
         handlers: {
             console: new log.handlers.ConsoleHandler(options.log.toUpperCase())
@@ -24,14 +24,16 @@ export const configureLogging = (fn: any) => async (options: any) =>{
     })
     return fn(options);
 }
-
-await new Command()
+export default async () => await new Command()
     .type('loglevel', enumType(["critical", "error", "warning", "info", "debug"]), {global: true})
     .name("bumpup")
-    .version(VERSION)
+    .version('1.0.0-0')
     .description('bumps up the version')
     .option('-d, --dry [type:boolean]', `executes all plugins in dry mode, preventing potentially destructive operations`, {global: true})
-    .option('-l, --log <type:loglevel>', `specifies the log level (critical,error, warning, info, debug)`, {default: 'info',global: true})
+    .option('-l, --log <type:loglevel>', `specifies the log level (critical,error, warning, info, debug)`, {
+        default: 'info',
+        global: true
+    })
     .option('-f, --file <type:string>', `which config file to read`, {default: 'bumpup.config.ts', global: true})
     .option('-p, --pre [type:boolean]', `do a prerelease`)
     .option('-i, --preid <type:string>', `specify an optional prelrease id to be used`, {depends: ['pre']})
@@ -41,3 +43,4 @@ await new Command()
     .action(configureLogging(init))
     // @ts-ignore
     .parse(Deno.args);
+

@@ -1,5 +1,3 @@
-import * as log from "https://deno.land/std@0.84.0/log/mod.ts";
-
 const defaultConfig = `import read from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/read-txt/src/read.ts";
 import type from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/type-git-conventional-changelog/src/type.ts";
 import determine from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/determine-semver/src/determine.ts";

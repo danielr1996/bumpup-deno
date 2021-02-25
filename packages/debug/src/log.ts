@@ -1,4 +1,4 @@
-import {BumpupFunction} from "../cli/src/lib/types.ts";
+import {BumpupFunction} from "../../cli/src/lib/types.ts";
 
 export const log: BumpupFunction = options => data => {
     console.log(data);

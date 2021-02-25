@@ -1,7 +1,7 @@
 import {BumpupConfig, BumpupOptions} from "../lib/types.ts";
 import {composePlugins} from "../lib/lib.ts";
 import {path} from "../../deps.ts";
-import * as log from "https://deno.land/std@0.84.0/log/mod.ts";
+import {log} from "../../deps.ts";
 
 // @ts-ignore
 export const bump = async(options: BumpupOptions) => {
