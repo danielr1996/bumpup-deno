@@ -28,7 +28,7 @@ jobs:
       - name: build
         run: |
           mkdir dist
-          deno bundle mod.ts dist/mod.js
+          deno bundle mod.ts dist/main.js
       - name: version
         run: |
           deno run --allow-run --allow-read --allow-write https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/cli/src/main.ts
