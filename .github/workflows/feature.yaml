@@ -31,7 +31,7 @@ jobs:
           deno bundle mod.ts dist/main.js
       - name: version
         run: |
-          deno run --allow-run --allow-read --allow-write https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/cli/src/main.ts
+          deno run --allow-run --allow-read --allow-write https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/cli/mod.ts
           echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
           echo ${{ env.VERSION }}
       - uses: stefanzweifel/git-auto-commit-action@v4
@@ -48,12 +48,12 @@ jobs:
           release_name: ${{matrix.dir}}-${{ env.VERSION }}
           draft: false
           prerelease: true
-#      - id: upload-release-asset
-#        uses: actions/upload-release-asset@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          upload_url: ${{ steps.create_release.outputs.upload_url }}
-#          asset_path: ./packages/${{matrix.dir}}/dist/main.js
-#          asset_name: main.js
-#          asset_content_type: application/javascript
+      - id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./packages/${{matrix.dir}}/dist/main.js
+          asset_name: main.js
+          asset_content_type: application/javascript
