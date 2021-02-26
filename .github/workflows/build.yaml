@@ -33,10 +33,10 @@ jobs:
         uses: danielr1996/setup-eggs@v1
         with:
           token: ${{ secrets.NEST_TOKEN }}
-      - name: version
+      - name: version-feature
         if: github.ref != 'refs/heads/main'
         run: bumpup --pre
-      - name: version
+      - name: version-main
         if: github.ref == 'refs/heads/main'
         run: bumpup
       - name: publish
