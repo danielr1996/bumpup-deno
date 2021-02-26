@@ -1,3 +1,3 @@
-export * as semver from "https://deno.land/x/semver/mod.ts";
-export type {BumpupFunction} from 'https://x.nest.land/bumpup:cli@1.0.0-23/src/lib/types.ts';
-export * as log from "https://deno.land/std@0.84.0/log/mod.ts";
+export * as semver from "https://deno.land/x/semver@v1.3.0/mod.ts";
+export type {BumpupFunction} from 'https://latest.land.danielr1996.de/x/bumpup:cli/src/lib/types.ts';
+export * as log from "https://x.nest.land/std@0.88.0/log/mod.ts";
