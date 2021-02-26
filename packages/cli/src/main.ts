@@ -1,7 +1,7 @@
 import { Command, log } from "../deps.ts";
 import { bump } from "./commands/bump.ts";
 import { init } from "./commands/init.ts";
-import {VERSION} from "../version.ts";
+import {VERSION} from "./version.ts";
 
 export const enumType = (enumOptions: string[]) =>
   ({ value }: any) => {
