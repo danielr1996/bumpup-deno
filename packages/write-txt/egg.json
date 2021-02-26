@@ -3,7 +3,7 @@
   "version": "1.0.0-3",
   "entry": "./mod.ts",
   "description": "fully automated and extensible software versioning",
-  "homepage": "https://github.com/danielr1996/bumpup-deno/tree/main/packages/write-txt",
+  "homepage": "https://github.com/danielr1996/bumpup/tree/main/packages/write-txt",
   "unstable": true,
   "unlisted": false,
   "files": [
