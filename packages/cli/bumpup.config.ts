@@ -8,17 +8,17 @@ const config: BumpupConfig = {
     plugins: [
         read,
         determine,
-        write,
+        // write,
         () =>
             (data) => {
                 console.log(data);
                 return data;
             },
-        ()=>async data=>{
-            // @ts-ignore
-            await Deno.writeTextFile('src/version.ts',`export const VERSION = '${data.newVersion}'`)
-            return data;
-        }
+        // ()=>async data=>{
+        //     // @ts-ignore
+        //     await Deno.writeTextFile('src/version.ts',`export const VERSION = '${data.newVersion}'`)
+        //     return data;
+        // }
     ],
 };
 export default config;
