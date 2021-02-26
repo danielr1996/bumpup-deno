@@ -11,7 +11,7 @@
 
 [comment]: <> ([![HitCount]&#40;http://hits.dwyl.com/danielr1996/bumpup-deno.svg&#41;]&#40;http://hits.dwyl.com/danielr1996/bumpup-deno&#41;)
 
-> 📦 If you just want to see how to use `bumpup` head straight to [bumpup:cli](packages/cli/README.md)
+> 📦 If you just want to see how to use `bumpup` head straight to [bumpup:cli](packages/cli)
 
 Like
 [standard-version](https://github.com/conventional-changelog/standard-version#readme),

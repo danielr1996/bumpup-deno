@@ -12,5 +12,3 @@ logging is done with console.log, should be replaced with a complete logging sol
 ## no test
 ## no lints
 ## config file path resolution works only in cwd
-## plugins are ignoring options
-## rewrite help texts and update doc

@@ -1,17 +1,15 @@
-# @bumpup/cli
-
-[![npm version](https://badge.fury.io/js/%40bumpup%2Fcli.svg)](https://badge.fury.io/js/%40bumpup%2Fcli)
+# bumpup:cli
 
 ## Quickstart
 
 > 🚧️Currently
 > [`deno compile` doesn't support dynamic imports
 yet](https://github.com/denoland/deno/issues/8655) so the easiest way to install
-> is using deno install. As soon as dynamic imports are supported it is planned
+> is using `deno install`. As soon as dynamic imports are supported it is planned
 > to provide standalone, self contained binaries.
 
 > This also means that you have to have
-> [deno installed](https://github.com/denoland/deno/releases/tag/v1.7.2), in the
+> [deno installed](https://github.com/denoland/deno/releases/tag/v1.7.5), in the
 > future this isn't required anymore.
 
 ```shell script
@@ -35,7 +33,7 @@ To see all options and commands run `bumpup --help` or
 $ bumpup --help
 
   Usage:   bumpup
-  Version: v0.0.1
+  Version: 1.0.0
 
   Description:
 
@@ -63,7 +61,7 @@ $ bumpup --help
 $ bumpup init --help
 
   Usage:   bumpup init
-  Version: v0.0.1
+  Version: 1.0.0
 
   Description:
 
@@ -161,8 +159,8 @@ export default config;
 
 #### Inline Plugins
 
-Because the configuration is just plain javascript it is also possible to
-specify a plugin inline. This might be usefull if you want to debug the workflow
+Because the configuration is just plain javascript/typescript it is also possible to
+specify a plugin inline. This might be useful if you want to debug the workflow
 or slightly alter a plugins behaviour without writing and publishing a complete
 plugin for it.
 
@@ -175,6 +173,7 @@ export default {
     (options) =>
       (data) => {
         console.log(options, data);
+        return data;
       },
   ],
 };

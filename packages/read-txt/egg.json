@@ -3,7 +3,7 @@
   "version": "1.0.0-4",
   "entry": "./mod.ts",
   "description": "fully automated and extensible software versioning",
-  "homepage": "https://github.com/danielr1996/bumpup-deno/packages/read-txt",
+  "homepage": "https://github.com/danielr1996/bumpup-deno/tree/main/packages/read-txt",
   "unstable": true,
   "unlisted": false,
   "files": [

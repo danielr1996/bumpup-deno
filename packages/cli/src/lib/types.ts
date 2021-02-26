@@ -2,13 +2,14 @@ export type BumpupData = {
   version?: string;
   type?: string;
   newVersion?: string;
+  [key: string]: any;
 };
 
 export type BumpupOptions = {
   dry?: boolean;
   pre?: boolean;
   preid?: string;
-  log?: "error" | "warn" | "info" | "verbose" | "debug" | "silly";
+  log?: "critical" | "error" | "warning" | "info" | "debug";
   file?: string;
   [key: string]: any;
 };
