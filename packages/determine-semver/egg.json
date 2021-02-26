@@ -1,6 +1,6 @@
 {
   "name": "bumpup:determine-semver",
-  "version": "1.0.0-9",
+  "version": "1.0.0-10",
   "entry": "./mod.ts",
   "description": "fully automated and extensible software versioning",
   "homepage": "https://github.com/danielr1996/bumpup/tree/main/packages/determine-semver",
