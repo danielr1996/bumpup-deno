@@ -1,7 +1,7 @@
-import read from "../read-json/mod.ts";
-import determine from "../determine-semantic-increment/mod.ts";
-import write from "../write-json/mod.ts";
-import {BumpupConfig} from "./src/lib/types.ts";
+import read from "https://x.nest.land/bumpup:read-json@1.0.0-1/mod.ts";
+import determine from "https://x.nest.land/bumpup:determine-semantic-increment@1.0.0-1/mod.ts";
+import write from "https://x.nest.land/bumpup:write-json@1.0.0-1/mod.ts";
+import {BumpupConfig} from "https://x.nest.land/bumpup:cli@1.0.0-2/src/lib/types.ts";
 
 const config: BumpupConfig = {
     version: "2.0.0",

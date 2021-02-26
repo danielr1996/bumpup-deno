@@ -16,7 +16,7 @@ yet](https://github.com/denoland/deno/issues/8655) so the easiest way to install
 
 ```shell script
 // Install bumpup to your $DENO_DIR
-deno install --allow-run --allow-read --allow-write -n bumpup https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/cli/src/main.ts
+deno install --unstable --allow-run --allow-read --allow-write -n bumpup https://x.nest.land/bumpup:cli@1.0.0-5/mod.ts
 // Create an example config file
 bumpup init
 bumpup

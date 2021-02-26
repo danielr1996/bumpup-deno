@@ -17,7 +17,7 @@ jobs:
       max-parallel: 1
       matrix:
         deno: [ '1.7.5']
-        dir: ['cli', 'determine-semantic-increment','read-json','write-json']
+        dir: ['cli', 'determine-incremental','determine-semantic-increment','determine-semver','log','read-json','read-txt','type-git-conventional-changelog','write-json','write-txt']
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -27,37 +27,15 @@ jobs:
         uses: denolib/setup-deno@v2
         with:
           deno-version: ${{matrix.deno}}
-#      - name: build
-#        run: |
-#          mkdir dist
-#          deno bundle mod.ts dist/main.js
       - name: version
         run: |
-          deno run --allow-run --allow-read --allow-write https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/cli/mod.ts
+          deno run --allow-run --allow-read --allow-write --unstable https://x.nest.land/bumpup:cli@1.0.0-5/mod.ts
           cat egg.json
       - name: publish
         run: |
           deno install -Afq --unstable https://x.nest.land/eggs@0.3.5/eggs.ts
           eggs link ${{ secrets.NEST_TOKEN }}
           eggs publish --yes
-#      - id: create_release
-#        uses: actions/create-release@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          tag_name: ${{matrix.dir}}-${{ env.VERSION }}
-#          release_name: ${{matrix.dir}}-${{ env.VERSION }}
-#          draft: false
-#          prerelease: true
-#      - id: upload-release-asset
-#        uses: actions/upload-release-asset@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          upload_url: ${{ steps.create_release.outputs.upload_url }}
-#          asset_path: ./packages/${{matrix.dir}}/dist/main.js
-#          asset_name: main.js
-#          asset_content_type: application/javascript
       - name: commit
         uses: EndBug/add-and-commit@v7
         with:
