@@ -39,7 +39,7 @@ jobs:
         run: |
           deno install -Afq --unstable https://x.nest.land/eggs@0.3.5/eggs.ts
           eggs link ${{ secrets.NEST_TOKEN }}
-          eggs publish
+          eggs publish --yes
 #      - id: create_release
 #        uses: actions/create-release@v1
 #        env:
