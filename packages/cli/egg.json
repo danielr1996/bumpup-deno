@@ -1,6 +1,6 @@
 {
   "name": "bumpup:cli",
-  "version": "1.0.0-6",
+  "version": "1.0.0-7",
   "entry": "./mod.ts",
   "description": "fully automated and extensible software versioning",
   "homepage": "https://github.com/danielr1996/bumpup-deno/packages/cli",
