@@ -34,6 +34,8 @@ jobs:
       - run: pwd
       - name: version
         uses: danielr1996/gh-actions-bumpup@main
+        with:
+          cwd: packages/${{matrix.dir}}
       - name: publish
         run: |
           deno install -Afq --unstable https://x.nest.land/eggs@0.3.5/eggs.ts
