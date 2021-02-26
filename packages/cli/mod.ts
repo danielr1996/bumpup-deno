@@ -1,3 +1,3 @@
-import command from './src/main.ts'
+import command from "./src/main.ts";
 
 await command();

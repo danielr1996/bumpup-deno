@@ -17,42 +17,47 @@ jobs:
       max-parallel: 1
       matrix:
         deno: [ '1.7.5']
-        dir: ['cli', 'debug', 'determine-incremental','read-txt','write-txt']
+#        dir: ['cli', 'debug', 'determine-incremental','read-txt','write-txt']
+        dir: ['cli']
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - run: git log --oneline
       - uses: denolib/setup-deno@v2
         with:
           deno-version: ${{matrix.deno}}
-      - name: build
-        run: |
-          mkdir dist
-          deno bundle mod.ts dist/main.js
+#      - name: build
+#        run: |
+#          mkdir dist
+#          deno bundle mod.ts dist/main.js
       - name: version
         run: |
           deno run --allow-run --allow-read --allow-write https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/cli/mod.ts
           echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
           echo ${{ env.VERSION }}
-      - id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{matrix.dir}}-${{ env.VERSION }}
-          release_name: ${{matrix.dir}}-${{ env.VERSION }}
-          draft: false
-          prerelease: true
-      - id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./packages/${{matrix.dir}}/dist/main.js
-          asset_name: main.js
-          asset_content_type: application/javascript
+      - name: publish
+        run: |
+          deno install -Afq --unstable https://x.nest.land/eggs@0.3.5/eggs.ts
+          eggs link ${{ secrets.NEST_TOKEN }}
+          eggs publish
+#      - id: create_release
+#        uses: actions/create-release@v1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          tag_name: ${{matrix.dir}}-${{ env.VERSION }}
+#          release_name: ${{matrix.dir}}-${{ env.VERSION }}
+#          draft: false
+#          prerelease: true
+#      - id: upload-release-asset
+#        uses: actions/upload-release-asset@v1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          upload_url: ${{ steps.create_release.outputs.upload_url }}
+#          asset_path: ./packages/${{matrix.dir}}/dist/main.js
+#          asset_name: main.js
+#          asset_content_type: application/javascript
       - uses: EndBug/add-and-commit@v7
         with:
           add: ./packages/${{matrix.dir}}/version.txt
