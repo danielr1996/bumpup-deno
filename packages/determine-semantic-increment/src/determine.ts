@@ -1,10 +1,19 @@
-import {BumpupFunction} from "../deps.ts";
+import {BumpupFunction, log, semver} from "../deps.ts";
 
 const determine: BumpupFunction = options => data => {
-    // @ts-ignore
-    const version: number = Number.parseInt(data.version.replace('1.0.0-',''));
-    const newVersion = version+1;
-    return {...data, newVersion: '1.0.0-'+newVersion.toString()}
+    if (!('version' in data)) {
+        log.error(`version doesn't exist in data`)
+        return data;
+    }
+    const releaseIdentifier = options.pre ? `prerelease` : 'patch';
+    log.debug(`releaseIdentifier: ${releaseIdentifier}`)
+    const returnData = {
+        ...data,
+        // @ts-ignore
+        newVersion: semver.inc(data.version as string, releaseIdentifier as semver.ReleaseType, options.preid) as string
+    };
+    log.info(`${returnData.newVersion !== returnData.version ? `new version is ${returnData.newVersion}` : `no new version`}`)
+    return returnData;
 }
 
 export default determine;

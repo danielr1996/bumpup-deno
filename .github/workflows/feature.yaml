@@ -34,7 +34,7 @@ jobs:
         with:
           token: ${{ secrets.NEST_TOKEN }}
       - name: version
-        run: bumpup
+        run: bumpup --pre
       - name: publish
         run: eggs publish --yes
       - name: commit
