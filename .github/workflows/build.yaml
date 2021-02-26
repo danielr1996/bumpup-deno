@@ -34,7 +34,11 @@ jobs:
         with:
           token: ${{ secrets.NEST_TOKEN }}
       - name: version
+        if: github.ref != 'refs/heads/main'
         run: bumpup --pre
+      - name: version
+        if: github.ref == 'refs/heads/main'
+        run: bumpup
       - name: publish
         run: eggs publish --yes
       - name: commit
