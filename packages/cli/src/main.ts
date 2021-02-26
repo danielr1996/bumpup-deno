@@ -1,6 +1,7 @@
 import { Command, log } from "../deps.ts";
 import { bump } from "./commands/bump.ts";
 import { init } from "./commands/init.ts";
+import {VERSION} from "../version.ts";
 
 export const enumType = (enumOptions: string[]) =>
   ({ value }: any) => {
@@ -36,7 +37,7 @@ export default async () =>
       { global: true },
     )
     .name("bumpup")
-    .version("1.0.0-0")
+    .version(VERSION)
     .description("bumps up the version")
     .option(
       "-d, --dry [type:boolean]",

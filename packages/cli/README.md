@@ -112,12 +112,12 @@ export default {
 To add a plugin import it and add it to the plugin array:
 
 ```ts
-import read from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/read-txt/src/read.ts";
-import type from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/type-git-conventional-changelog/src/type.ts";
-import determine from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/determine-semver/src/determine.ts";
-import write from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/write-txt/src/write.ts";
-import record from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/type-git-conventional-changelog/src/record.ts";
-import { BumpupConfig } from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/cli/src/lib/types.ts";
+import read from "https://x.nest.land/bumpup:read-json@1.0.0-1/mod.ts";
+import type from "https://x.nest.land/bumpup:type-git-conventional-changelog@1.0.0-1/mod.ts";
+import determine from "https://x.nest.land/bumpup:determine-semver@1.0.0-1/mod.ts";
+import write from "https://x.nest.land/bumpup:write-json@1.0.0-1/mod.ts";
+import record from "https://x.nest.land/bumpup:type-git-conventional-changelog@1.0.0-1/mod.ts";
+import {BumpupConfig} from "https://x.nest.land/bumpup:cli@1.0.0-2/src/lib/types.ts";
 
 const config: BumpupConfig = {
   version: "2.0.0",
@@ -140,10 +140,11 @@ doc.
 
 ```ts
 import read from "https://x.nest.land/bumpup:read-json@1.0.0-1/mod.ts";
-import type from "";
+import type from "https://x.nest.land/bumpup:type-git-conventional-changelog@1.0.0-1/mod.ts";
 import determine from "https://x.nest.land/bumpup:determine-semver@1.0.0-1/mod.ts";
 import write from "https://x.nest.land/bumpup:write-json@1.0.0-1/mod.ts";
-import record from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/type-git-conventional-changelog/record.ts";
+import record from "https://x.nest.land/bumpup:type-git-conventional-changelog@1.0.0-1/mod.ts";
+import {BumpupConfig} from "https://x.nest.land/bumpup:cli@1.0.0-2/src/lib/types.ts";
 
 const config: BumpupConfig = {
   version: "2.0.0",

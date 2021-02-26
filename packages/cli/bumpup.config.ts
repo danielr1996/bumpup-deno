@@ -14,6 +14,11 @@ const config: BumpupConfig = {
                 console.log(data);
                 return data;
             },
+        ()=>async data=>{
+            // @ts-ignore
+            await Deno.writeTextFile('version.ts',`export const VERSION = '${data.newVersion}'`)
+            return data;
+        }
     ],
 };
 export default config;
