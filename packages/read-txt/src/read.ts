@@ -1,4 +1,4 @@
-import {BumpupFunction, BumpupPlugin} from "../../cli/src/lib/types.ts";
+import {BumpupFunction} from "../deps.ts";
 
 const read: BumpupFunction = options=> async data=>{
     //TODO: Error handling for file not found

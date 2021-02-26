@@ -1,4 +1,4 @@
-import {BumpupFunction, BumpupPlugin} from "../../cli/src/lib/types.ts";
+import {BumpupFunction} from "../deps.ts";
 import {createTag} from "./helpers.ts";
 import * as log from "https://deno.land/std@0.84.0/log/mod.ts";
 
