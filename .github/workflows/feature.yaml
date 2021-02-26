@@ -16,8 +16,8 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        deno: [ '1.7.5' ]
-        dir: [ 'cli', 'determine-incremental','determine-semantic-increment','determine-semver','log','read-json','read-txt','type-git-conventional-changelog','write-json','write-txt' ]
+        deno: [ '1.7.5']
+        dir: ['cli', 'determine-incremental','determine-semantic-increment','determine-semver','log','read-json','read-txt','type-git-conventional-changelog','write-json','write-txt']
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -31,6 +31,8 @@ jobs:
         uses: danielr1996/setup-bumpup@v1
       - name: setup eggs
         uses: danielr1996/setup-eggs@v1
+        with:
+          token: ${{ secrets.NEST_TOKEN }}
       - name: version
         run: bumpup
       - name: publish
