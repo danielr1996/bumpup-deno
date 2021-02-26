@@ -1,6 +1,6 @@
 {
   "name": "bumpup:determine-semantic-increment",
-  "version": "1.0.0-12",
+  "version": "1.0.0-13",
   "entry": "./mod.ts",
   "description": "fully automated and extensible software versioning",
   "homepage": "https://github.com/danielr1996/bumpup/tree/main/packages/determine-semantic-increment",
