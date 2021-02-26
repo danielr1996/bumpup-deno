@@ -11,7 +11,7 @@
 [![codecov](https://codecov.io/gh/danielr1996/bumpup-deno/branch/master/graph/badge.svg)](https://codecov.io/gh/danielr1996/bumpup-deno)
 [![HitCount](http://hits.dwyl.com/danielr1996/bumpup-deno.svg)](http://hits.dwyl.com/danielr1996/bumpup-deno)
 
-> 📦 If you just want to see how to use `bumpup` head straight to [@bumpup/cli](packages/cli/README.md)
+> 📦 If you just want to see how to use `bumpup` head straight to [bumpup:cli](packages/cli/README.md)
 
 Like
 [standard-version](https://github.com/conventional-changelog/standard-version#readme),
