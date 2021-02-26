@@ -8,8 +8,8 @@
 [![Awesome Badges](https://img.shields.io/badge/badges-awesome-green.svg)](https://github.com/Naereen/badges)
 
 ![Build](https://github.com/danielr1996/bumpup-deno/workflows/Build/badge.svg)
-[![codecov](https://codecov.io/gh/danielr1996/bumpup/branch/master/graph/badge.svg)](https://codecov.io/gh/danielr1996/bumpup)
-[![HitCount](http://hits.dwyl.com/danielr1996/bumpup.svg)](http://hits.dwyl.com/danielr1996/bumpup)
+[![codecov](https://codecov.io/gh/danielr1996/bumpup-deno/branch/master/graph/badge.svg)](https://codecov.io/gh/danielr1996/bumpup-deno)
+[![HitCount](http://hits.dwyl.com/danielr1996/bumpup-deno.svg)](http://hits.dwyl.com/danielr1996/bumpup-deno)
 
 > 📦 If you just want to see how to use `bumpup` head straight to [@bumpup/cli](packages/cli/README.md)
 
