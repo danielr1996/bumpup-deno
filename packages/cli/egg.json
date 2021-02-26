@@ -1,22 +1,22 @@
 {
-    "name": "bumpup:cli",
-    "version": "1.0.0-4",
-    "entry": "./mod.ts",
-    "description": "fully automated and extensible software versioning",
-    "homepage": "https://github.com/danielr1996/bumpup-deno/packages/cli",
-    "unstable": true,
-    "unlisted": false,
-    "files": [
-        "./mod.ts",
-        "./deps.ts",
-        "./src/**/*",
-        "./README.md"
-    ],
-    "ignore": [
-        ".git"
-    ],
-    "checkFormat": "deno fmt",
-    "checkTests": "deno test",
-    "checkInstallation": true,
-    "check": true
+  "name": "bumpup:cli",
+  "version": "1.0.0-5",
+  "entry": "./mod.ts",
+  "description": "fully automated and extensible software versioning",
+  "homepage": "https://github.com/danielr1996/bumpup-deno/packages/cli",
+  "unstable": true,
+  "unlisted": false,
+  "files": [
+    "./mod.ts",
+    "./deps.ts",
+    "./src/**/*",
+    "./README.md"
+  ],
+  "ignore": [
+    ".git"
+  ],
+  "checkFormat": "deno fmt",
+  "checkTests": "deno test",
+  "checkInstallation": true,
+  "check": true
 }
