@@ -1,11 +1,8 @@
-import * as log from "https://deno.land/std@0.84.0/log/mod.ts";
-
-const defaultConfig = `import read from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/read-txt/src/read.ts";
-import type from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/type-git-conventional-changelog/src/type.ts";
-import determine from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/determine-semver/src/determine.ts";
-import write from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/write-txt/src/write.ts";
-import record from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/type-git-conventional-changelog/src/record.ts";
-import {BumpupConfig} from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/cli/src/lib/types.ts";
+const defaultConfig =
+  `import read from "https://x.nest.land/bumpup:read-json@1.0.0-1/mod.ts";
+import determine from "https://x.nest.land/bumpup:determine-semantic-increment@1.0.0-1/mod.ts";
+import write from "https://x.nest.land/bumpup:write-json@1.0.0-1/mod.ts";
+import {BumpupConfig} from "https://x.nest.land/bumpup:cli@1.0.0-2/src/lib/types.ts";";
 
 const config: BumpupConfig = {
     version: "2.0.0",
@@ -18,14 +15,14 @@ const config: BumpupConfig = {
     ]
 };
 export default config;
-`
+`;
 
 // @ts-ignore
 export const init = async (options) => {
-    if (options.dry) {
-        console.log(defaultConfig)
-    }else{
-        // @ts-ignore
-        await Deno.writeTextFile('bumpup.config.ts', defaultConfig)
-    }
-}
+  if (options.dry) {
+    console.log(defaultConfig);
+  } else {
+    // @ts-ignore
+    await Deno.writeTextFile("bumpup.config.ts", defaultConfig);
+  }
+};

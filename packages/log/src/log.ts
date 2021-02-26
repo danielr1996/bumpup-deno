@@ -1,10 +1,9 @@
-import {BumpupFunction} from "../cli/src/lib/types.ts";
+import {BumpupFunction} from "../deps.ts";
 
 export const log: BumpupFunction = options => data => {
     console.log(data);
     return data;
 }
-export default log;
 
 export const logOptions: BumpupFunction = options => data => {
     console.log(options);

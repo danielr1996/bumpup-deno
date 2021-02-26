@@ -1,4 +1,4 @@
-import {BumpupFunction, BumpupPlugin} from "../../cli/src/lib/types.ts";
+import {BumpupFunction} from "../deps.ts";
 import {createTag} from "./helpers.ts";
 import * as log from "https://deno.land/std@0.84.0/log/mod.ts";
 
@@ -17,7 +17,18 @@ const record: BumpupFunction = options=>async data=>{
             stdout: "piped",
             stderr: "piped",
         })
-        const raw = new TextDecoder().decode(await process.output());
+        log.info(`recording ${tag} to git`)
+        // return new TextDecoder().decode(await process.output());
+        const {code} = await process.status();
+        if (code === 0) {
+            const rawOutput = await process.output();
+            return {...data, stdout: rawOutput};
+        } else {
+            const rawError = await process.stderrOutput();
+            const errorString = new TextDecoder().decode(rawError);
+            console.log(errorString);
+            return {...data, error: errorString};
+        }
     }
 
     return data;

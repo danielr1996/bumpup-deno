@@ -3,15 +3,14 @@
 
 [![bumpup](https://img.shields.io/badge/%F0%9F%93%A6-bumpup-informational)](https:/github.com/danielr1996/bumpup)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
-[![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
-[![Awesome Badges](https://img.shields.io/badge/badges-awesome-green.svg)](https://github.com/Naereen/badges)
-
 ![Build](https://github.com/danielr1996/bumpup/workflows/Build/badge.svg)
-[![codecov](https://codecov.io/gh/danielr1996/bumpup/branch/master/graph/badge.svg)](https://codecov.io/gh/danielr1996/bumpup)
-[![HitCount](http://hits.dwyl.com/danielr1996/bumpup.svg)](http://hits.dwyl.com/danielr1996/bumpup)
+[![deno](https://img.shields.io/badge/deno-v1.7.5-green.svg?style=round-square&logo=deno)](https:/github.com/danielr1996/bumpup)
+[![nest badge](https://nest.land/badge-block.svg)](https://nest.land/package/your-module)
 
-> 📦 If you just want to see how to use `bumpup` head straight to [@bumpup/cli](packages/cli/README.md)
+[![codecov](https://codecov.io/gh/danielr1996/bumpup-deno/branch/master/graph/badge.svg)](https://codecov.io/gh/danielr1996/bumpup-deno)
+
+
+> 📦 If you just want to see how to use `bumpup` head straight to [bumpup:cli](packages/cli)
 
 Like
 [standard-version](https://github.com/conventional-changelog/standard-version#readme),

@@ -1,0 +1,21 @@
+{
+  "name": "bumpup:determine-semantic-increment",
+  "version": "1.0.0-17",
+  "entry": "./mod.ts",
+  "description": "fully automated and extensible software versioning",
+  "homepage": "https://github.com/danielr1996/bumpup/tree/main/packages/determine-semantic-increment",
+  "unlisted": false,
+  "files": [
+    "./mod.ts",
+    "./deps.ts",
+    "./src/**/*",
+    "./README.md"
+  ],
+  "ignore": [
+    ".git"
+  ],
+  "checkFormat": "deno fmt",
+  "checkTests": "deno test",
+  "checkInstallation": true,
+  "check": true
+}

@@ -1,0 +1,21 @@
+{
+  "name": "bumpup:log",
+  "version": "1.0.0-15",
+  "entry": "./mod.ts",
+  "description": "fully automated and extensible software versioning",
+  "homepage": "https://github.com/danielr1996/bumpup/tree/main/packages/log",
+  "unlisted": false,
+  "files": [
+    "./mod.ts",
+    "./deps.ts",
+    "./src/**/*",
+    "./README.md"
+  ],
+  "ignore": [
+    ".git"
+  ],
+  "checkFormat": "deno fmt",
+  "checkTests": "deno test",
+  "checkInstallation": true,
+  "check": true
+}

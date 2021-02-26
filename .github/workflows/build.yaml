@@ -1,0 +1,48 @@
+name: Build
+on:
+  push:
+    branches:
+      - '*'         # matches every branch that doesn't contain a '/'
+      - '*/*'       # matches every branch containing a single '/'
+      - '**'        # matches every branch
+      - '!master'   # excludes master
+jobs:
+  build:
+    name: Build
+    runs-on: 'ubuntu-latest'
+    defaults:
+      run:
+        working-directory: packages/${{matrix.dir}}
+    strategy:
+      max-parallel: 1
+      matrix:
+        deno: [ '1.7.5']
+        dir: ['cli', 'determine-incremental','determine-semantic-increment','determine-semver','log','read-json','read-txt','type-git-conventional-changelog','write-json','write-txt']
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: setup deno
+        uses: denolib/setup-deno@v2
+        with:
+          deno-version: ${{matrix.deno}}
+      - name: setup bumpup
+        uses: danielr1996/setup-bumpup@v1
+      - name: setup eggs
+        uses: danielr1996/setup-eggs@v1
+        with:
+          token: ${{ secrets.NEST_TOKEN }}
+      - name: version
+        if: github.ref != 'refs/heads/main'
+        run: bumpup --pre
+      - name: version
+        if: github.ref == 'refs/heads/main'
+        run: bumpup
+      - name: publish
+        run: eggs publish --yes
+      - name: commit
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: ./packages/${{matrix.dir}}/egg.json
+          signoff: true
