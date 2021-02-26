@@ -4,7 +4,6 @@
   "entry": "./mod.ts",
   "description": "fully automated and extensible software versioning",
   "homepage": "https://github.com/danielr1996/bumpup/tree/main/packages/determine-semantic-increment",
-  "unstable": true,
   "unlisted": false,
   "files": [
     "./mod.ts",
