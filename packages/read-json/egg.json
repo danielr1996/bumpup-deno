@@ -1,6 +1,6 @@
 {
   "name": "bumpup:read-json",
-  "version": "1.0.0-15",
+  "version": "1.0.0-16",
   "entry": "./mod.ts",
   "description": "fully automated and extensible software versioning",
   "homepage": "https://github.com/danielr1996/bumpup/tree/main/packages/read-json",
