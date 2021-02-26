@@ -1,5 +1,4 @@
-import {BumpupFunction, BumpupPlugin} from "../../cli/src/lib/types.ts";
-import * as log from "https://deno.land/std@0.84.0/log/mod.ts";
+import {BumpupFunction} from "../deps.ts";
 
 const write: BumpupFunction = options => async data => {
     //TODO: Error handling for file not found

@@ -1,4 +1,4 @@
-import {BumpupFunction, BumpupPlugin} from "../../cli/src/lib/types.ts";
+import {BumpupFunction} from "../deps.ts";
 
 const determine: BumpupFunction = options => data => {
     // @ts-ignore
