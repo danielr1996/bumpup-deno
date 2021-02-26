@@ -1,6 +1,6 @@
 {
   "name": "bumpup:type-git-conventional-changelog",
-  "version": "1.0.0-1",
+  "version": "1.0.0-2",
   "entry": "./mod.ts",
   "description": "fully automated and extensible software versioning",
   "homepage": "https://github.com/danielr1996/bumpup-deno/packages/type-git-conventional-changelog",
