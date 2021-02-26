@@ -16,7 +16,7 @@ yet](https://github.com/denoland/deno/issues/8655) so the easiest way to install
 
 ```shell script
 // Install bumpup to your $DENO_DIR
-deno install --unstable --allow-run --allow-read --allow-write -n bumpup https://x.nest.land/bumpup:cli@1.0.0-5/mod.ts
+deno install --unstable --allow-run --allow-read --allow-write -n bumpup https://x.nest.land/bumpup:cli@<version>/mod.ts
 // Create an example config file
 bumpup init
 bumpup
@@ -112,12 +112,12 @@ export default {
 To add a plugin import it and add it to the plugin array:
 
 ```ts
-import read from "https://x.nest.land/bumpup:read-json@1.0.0-1/mod.ts";
-import type from "https://x.nest.land/bumpup:type-git-conventional-changelog@1.0.0-1/mod.ts";
-import determine from "https://x.nest.land/bumpup:determine-semver@1.0.0-1/mod.ts";
-import write from "https://x.nest.land/bumpup:write-json@1.0.0-1/mod.ts";
-import record from "https://x.nest.land/bumpup:type-git-conventional-changelog@1.0.0-1/mod.ts";
-import {BumpupConfig} from "https://x.nest.land/bumpup:cli@1.0.0-2/src/lib/types.ts";
+import read from "https://x.nest.land/bumpup:read-json@<version>/mod.ts";
+import type from "https://x.nest.land/bumpup:type-git-conventional-changelog@<version>/mod.ts";
+import determine from "https://x.nest.land/bumpup:determine-semver@<version>/mod.ts";
+import write from "https://x.nest.land/bumpup:write-json@<version>/mod.ts";
+import record from "https://x.nest.land/bumpup:type-git-conventional-changelog@<version>/mod.ts";
+import {BumpupConfig} from "https://x.nest.land/bumpup:cli@<version>/src/lib/types.ts";
 
 const config: BumpupConfig = {
   version: "2.0.0",
@@ -139,12 +139,12 @@ of the plugin: For a list of options supported by the plugin see the plugins
 doc.
 
 ```ts
-import read from "https://x.nest.land/bumpup:read-json@1.0.0-1/mod.ts";
-import type from "https://x.nest.land/bumpup:type-git-conventional-changelog@1.0.0-1/mod.ts";
-import determine from "https://x.nest.land/bumpup:determine-semver@1.0.0-1/mod.ts";
-import write from "https://x.nest.land/bumpup:write-json@1.0.0-1/mod.ts";
-import record from "https://x.nest.land/bumpup:type-git-conventional-changelog@1.0.0-1/mod.ts";
-import {BumpupConfig} from "https://x.nest.land/bumpup:cli@1.0.0-2/src/lib/types.ts";
+import read from "https://x.nest.land/bumpup:read-json@<version>/mod.ts";
+import type from "https://x.nest.land/bumpup:type-git-conventional-changelog@<version>/mod.ts";
+import determine from "https://x.nest.land/bumpup:determine-semver@<version>/mod.ts";
+import write from "https://x.nest.land/bumpup:write-json@<version>/mod.ts";
+import record from "https://x.nest.land/bumpup:type-git-conventional-changelog@<version>/mod.ts";
+import {BumpupConfig} from "https://x.nest.land/bumpup:cli@<version>/src/lib/types.ts";
 
 const config: BumpupConfig = {
   version: "2.0.0",

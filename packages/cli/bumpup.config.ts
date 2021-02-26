@@ -16,7 +16,7 @@ const config: BumpupConfig = {
             },
         ()=>async data=>{
             // @ts-ignore
-            await Deno.writeTextFile('version.ts',`export const VERSION = '${data.newVersion}'`)
+            await Deno.writeTextFile('src/version.ts',`export const VERSION = '${data.newVersion}'`)
             return data;
         }
     ],

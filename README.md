@@ -4,8 +4,7 @@
 [![bumpup](https://img.shields.io/badge/%F0%9F%93%A6-bumpup-informational)](https:/github.com/danielr1996/bumpup)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 ![Build](https://github.com/danielr1996/bumpup-deno/workflows/Build/badge.svg)
-[![bumpup](https://img.shields.io/badge/deno-v1.7.5-green.svg?style=round-square&logo=deno)](https:/github.com/danielr1996/bumpup)
-[![bumpup](https://img.shields.io/badge/deno-v1.7.5-green.svg?style=round-square&logo=deno)](https:/github.com/danielr1996/bumpup)
+[![deno](https://img.shields.io/badge/deno-v1.7.5-green.svg?style=round-square&logo=deno)](https:/github.com/danielr1996/bumpup)
 [![nest badge](https://nest.land/badge-block.svg)](https://nest.land/package/your-module)
 
 [comment]: <> ([![codecov]&#40;https://codecov.io/gh/danielr1996/bumpup-deno/branch/master/graph/badge.svg&#41;]&#40;https://codecov.io/gh/danielr1996/bumpup-deno&#41;)
