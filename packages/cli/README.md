@@ -139,10 +139,10 @@ of the plugin: For a list of options supported by the plugin see the plugins
 doc.
 
 ```ts
-import type from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/type-git-conventional-changelog/type.ts";
-import read from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/read-txt/read.ts";
-import determine from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/determine-semver/determine.ts";
-import write from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/write-txt/write.ts";
+import read from "https://x.nest.land/bumpup:read-json@1.0.0-1/mod.ts";
+import type from "";
+import determine from "https://x.nest.land/bumpup:determine-semver@1.0.0-1/mod.ts";
+import write from "https://x.nest.land/bumpup:write-json@1.0.0-1/mod.ts";
 import record from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/main/packages/src/type-git-conventional-changelog/record.ts";
 
 const config: BumpupConfig = {
