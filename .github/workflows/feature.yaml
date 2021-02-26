@@ -31,6 +31,7 @@ jobs:
 #        run: |
 #          deno run --allow-run --allow-read --allow-write --unstable https://x.nest.land/bumpup:cli@1.0.0-5/mod.ts
 #          cat egg.json
+      - run: pwd
       - name: version
         uses: danielr1996/gh-actions-bumpup@main
       - name: publish
