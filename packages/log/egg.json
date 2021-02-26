@@ -1,6 +1,6 @@
 {
   "name": "bumpup:log",
-  "version": "1.0.0-2",
+  "version": "1.0.0-3",
   "entry": "./mod.ts",
   "description": "fully automated and extensible software versioning",
   "homepage": "https://github.com/danielr1996/bumpup-deno/packages/log",
