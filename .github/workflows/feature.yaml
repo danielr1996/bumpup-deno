@@ -27,14 +27,14 @@ jobs:
         uses: denolib/setup-deno@v2
         with:
           deno-version: ${{matrix.deno}}
+      - name: setup bumpup
+        uses: danielr1996/gh-actions-bumpup@main
 #      - name: version
 #        run: |
 #          deno run --allow-run --allow-read --allow-write --unstable https://x.nest.land/bumpup:cli@1.0.0-5/mod.ts
 #          cat egg.json
       - name: version
-        uses: danielr1996/gh-actions-bumpup@main
-        with:
-          cwd: packages/${{matrix.dir}}
+        run: bumpup
       - name: publish
         run: |
           deno install -Afq --unstable https://x.nest.land/eggs@0.3.5/eggs.ts
