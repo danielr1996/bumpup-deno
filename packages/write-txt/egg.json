@@ -1,6 +1,6 @@
 {
   "name": "bumpup:write-txt",
-  "version": "1.0.0-12",
+  "version": "1.0.0",
   "entry": "./mod.ts",
   "description": "fully automated and extensible software versioning",
   "homepage": "https://github.com/danielr1996/bumpup/tree/main/packages/write-txt",
