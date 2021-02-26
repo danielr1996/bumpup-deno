@@ -1,8 +1,6 @@
-import read from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/read-txt/src/read.ts";
-import determine
-    from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/determine-incremental/src/determine.ts";
-import write
-    from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/write-txt/src/write.ts";
+import read from "../read-json/mod.ts";
+import determine from "../determine-semantic-increment/mod.ts";
+import write from "../write-json/mod.ts";
 import {BumpupConfig} from "https://raw.githubusercontent.com/danielr1996/bumpup-deno/feature/ci/packages/cli/src/lib/types.ts";
 
 const config: BumpupConfig = {
@@ -11,10 +9,11 @@ const config: BumpupConfig = {
         read,
         determine,
         write,
-        () => data => {
-            console.log(data);
-            return data;
-        }
-    ]
+        () =>
+            (data) => {
+                console.log(data);
+                return data;
+            },
+    ],
 };
 export default config;

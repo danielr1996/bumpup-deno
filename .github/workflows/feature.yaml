@@ -17,13 +17,14 @@ jobs:
       max-parallel: 1
       matrix:
         deno: [ '1.7.5']
-#        dir: ['cli', 'debug', 'determine-incremental','read-txt','write-txt']
-        dir: ['cli']
+        dir: ['cli', 'determine-semantic-increment','read-json','write-json']
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: denolib/setup-deno@v2
+      - name: setup deno
+        uses: denolib/setup-deno@v2
         with:
           deno-version: ${{matrix.deno}}
 #      - name: build
@@ -57,7 +58,8 @@ jobs:
 #          asset_path: ./packages/${{matrix.dir}}/dist/main.js
 #          asset_name: main.js
 #          asset_content_type: application/javascript
-      - uses: EndBug/add-and-commit@v7
+      - name: commit
+        uses: EndBug/add-and-commit@v7
         with:
           add: ./packages/${{matrix.dir}}/egg.json
           signoff: true
