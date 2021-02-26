@@ -7,7 +7,7 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 [![Awesome Badges](https://img.shields.io/badge/badges-awesome-green.svg)](https://github.com/Naereen/badges)
 
-![Build](https://github.com/danielr1996/bumpup/workflows/Build/badge.svg)
+![Build](https://github.com/danielr1996/bumpup-deno/workflows/Build/badge.svg)
 [![codecov](https://codecov.io/gh/danielr1996/bumpup/branch/master/graph/badge.svg)](https://codecov.io/gh/danielr1996/bumpup)
 [![HitCount](http://hits.dwyl.com/danielr1996/bumpup.svg)](http://hits.dwyl.com/danielr1996/bumpup)
 

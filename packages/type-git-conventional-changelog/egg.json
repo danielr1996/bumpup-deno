@@ -1,5 +1,5 @@
 {
-  "name": "bumpup:write-type-git-conventional-changelog",
+  "name": "bumpup:type-git-conventional-changelog",
   "version": "1.0.0-0",
   "entry": "./mod.ts",
   "description": "fully automated and extensible software versioning",
