@@ -16,8 +16,8 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        deno: [ '1.7.5']
-        dir: ['cli', 'determine-incremental','determine-semantic-increment','determine-semver','log','read-json','read-txt','type-git-conventional-changelog','write-json','write-txt']
+        deno: [ '1.7.5' ]
+        dir: [ 'cli', 'determine-incremental','determine-semantic-increment','determine-semver','log','read-json','read-txt','type-git-conventional-changelog','write-json','write-txt' ]
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -28,19 +28,13 @@ jobs:
         with:
           deno-version: ${{matrix.deno}}
       - name: setup bumpup
-        uses: danielr1996/gh-actions-bumpup@main
-#      - name: version
-#        run: |
-#          deno run --allow-run --allow-read --allow-write --unstable https://x.nest.land/bumpup:cli@1.0.0-5/mod.ts
-#          cat egg.json
+        uses: danielr1996/setup-bumpup@v1
+      - name: setup eggs
+        uses: danielr1996/setup-eggs@v1
       - name: version
         run: bumpup
       - name: publish
-        run: |
-          deno install -Afq --unstable https://x.nest.land/eggs@0.3.5/eggs.ts
-          eggs link ${{ secrets.NEST_TOKEN }}
-          eggs publish --yes
-      - run: cat eggs-debug.log & exit 0
+        run: eggs publish --yes
       - name: commit
         uses: EndBug/add-and-commit@v7
         with:
