@@ -1,7 +1,6 @@
 import {BumpupFunction} from "../deps.ts";
 import {createTag} from "./helpers.ts";
-import * as log from "https://deno.land/std@0.84.0/log/mod.ts";
-
+import {log} from "../deps.ts"
 const COMMIT_SEPERATOR = `++COMMIT_SEPERATOR++`
 
 const type: BumpupFunction = options => async data => {

@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.87.0/testing/asserts.ts";
+import { assertEquals } from "../deps.ts";
 import {createTag} from "./helpers.ts";
 
 // @ts-ignore
